@@ -10,13 +10,17 @@ namespace TestRandom
     {
         static void Main(string[] args)
         {
+            int soma = 0;
             Console.Write("Amount of dices:");
             int nDados = Convert.ToInt32(Console.ReadLine());
             Random random = new Random();
             for(int i = 0; i< nDados; i++)
             {
-                Console.WriteLine($"You rolled a {random.Next(1, 7)}");
+                int tmp = random.Next(1, 7);
+                soma += tmp;
+                Console.WriteLine($"You rolled a {tmp}");
             }
+            Console.WriteLine($"Total: {soma}");
         }
     }
 }
